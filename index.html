@@ -84,6 +84,10 @@
         footer a:hover {
             text-decoration: underline;
         }
+        #adContainer {
+            margin: 20px 0;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -98,7 +102,10 @@
 
     <main>
         <p>Welcome to <strong>Jobseeker's Journal</strong>, your go-to platform for discovering career opportunities, unlocking potential, and achieving your professional goals.</p>
-        
+
+        <!-- Ad container -->
+        <div id="adContainer"></div>
+
         <div class="search-section">
             <form id="searchForm" action="jobs.html" method="get">
                 <input type="text" id="searchInput" name="searchQuery" placeholder="Search for jobs..." style="padding: 10px; width: 80%; margin-top: 20px;">
@@ -138,6 +145,28 @@
                 alert('Please enter a job search term.');
             }
         });
+
+        // Add the ad code dynamically only if the current page is "jobs.html"
+        if (window.location.pathname.includes('jobs.html')) {
+            var adContainer = document.getElementById('adContainer');
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.innerHTML = `
+                atOptions = {
+                    'key' : '6e877c7df253876ae0ff9b5b887986cb',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+                var iframe = document.createElement('iframe');
+                iframe.src = '//onlyassigncoherence.com/6e877c7df253876ae0ff9b5b887986cb/invoke.js';
+                iframe.width = '300';
+                iframe.height = '250';
+                adContainer.appendChild(iframe);
+            `;
+            document.body.appendChild(script);
+        }
     </script>
 </body>
 </html>
