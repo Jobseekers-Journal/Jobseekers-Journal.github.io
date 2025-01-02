@@ -88,6 +88,11 @@
             margin: 20px 0;
             text-align: center;
         }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -97,7 +102,7 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="jobs.html">Jobs</a>
+        <a href="javascript:void(0);" id="jobsLink">Jobs</a>
     </nav>
 
     <main>
@@ -113,7 +118,7 @@
             </form>
         </div>
 
-        <a href="jobs.html" class="cta-button">View Job Listings</a>
+        <a href="javascript:void(0);" class="cta-button" id="loadJobs">View Job Listings</a>
 
         <div class="quotes">
             <p>"Choose a job you love, and you will never have to work a day in your life."</p>
@@ -128,6 +133,11 @@
                 <li><a href="post2.html">Top 5 Skills Employers Look For in 2025</a></li>
                 <li><a href="post3.html">Crafting a Resume That Stands Out</a></li>
             </ul>
+        </div>
+
+        <!-- Placeholder for iframe content -->
+        <div id="jobContent">
+            <!-- The content of jobs.html will be loaded here -->
         </div>
     </main>
 
@@ -146,27 +156,39 @@
             }
         });
 
-        // Add the ad code dynamically only if the current page is "jobs.html"
-        if (window.location.pathname.includes('jobs.html')) {
-            var adContainer = document.getElementById('adContainer');
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.innerHTML = `
-                atOptions = {
-                    'key' : '6e877c7df253876ae0ff9b5b887986cb',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
-                var iframe = document.createElement('iframe');
-                iframe.src = '//onlyassigncoherence.com/6e877c7df253876ae0ff9b5b887986cb/invoke.js';
-                iframe.width = '300';
-                iframe.height = '250';
-                adContainer.appendChild(iframe);
+        // Add the ad code dynamically
+        var adContainer = document.getElementById('adContainer');
+        var adScript = document.createElement('script');
+        adScript.type = 'text/javascript';
+        adScript.innerHTML = `
+            atOptions = {
+                'key' : '6e877c7df253876ae0ff9b5b887986cb',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+            var iframe = document.createElement('iframe');
+            iframe.src = '//onlyassigncoherence.com/6e877c7df253876ae0ff9b5b887986cb/invoke.js';
+            iframe.width = '300';
+            iframe.height = '250';
+            adContainer.appendChild(iframe);
+        `;
+        document.body.appendChild(adScript);
+
+        // Load jobs content inside an iframe on button click
+        document.getElementById('loadJobs').addEventListener('click', function() {
+            document.getElementById('jobContent').innerHTML = `
+                <iframe src="jobs.html"></iframe>
             `;
-            document.body.appendChild(script);
-        }
+        });
+
+        // Handle navigation to the Jobs section
+        document.getElementById('jobsLink').addEventListener('click', function() {
+            document.getElementById('jobContent').innerHTML = `
+                <iframe src="jobs.html"></iframe>
+            `;
+        });
     </script>
 </body>
 </html>
