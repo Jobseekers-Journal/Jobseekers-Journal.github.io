@@ -84,15 +84,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-        #adContainer {
-            margin: 20px 0;
-            text-align: center;
-        }
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
     </style>
 </head>
 <body>
@@ -102,15 +93,12 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="javascript:void(0);" id="jobsLink">Jobs</a>
+        <a href="jobs.html">Jobs</a>
     </nav>
 
     <main>
         <p>Welcome to <strong>Jobseeker's Journal</strong>, your go-to platform for discovering career opportunities, unlocking potential, and achieving your professional goals.</p>
-
-        <!-- Ad container -->
-        <div id="adContainer"></div>
-
+        
         <div class="search-section">
             <form id="searchForm" action="jobs.html" method="get">
                 <input type="text" id="searchInput" name="searchQuery" placeholder="Search for jobs..." style="padding: 10px; width: 80%; margin-top: 20px;">
@@ -118,7 +106,7 @@
             </form>
         </div>
 
-        <a href="javascript:void(0);" class="cta-button" id="loadJobs">View Job Listings</a>
+        <a href="jobs.html" class="cta-button">View Job Listings</a>
 
         <div class="quotes">
             <p>"Choose a job you love, and you will never have to work a day in your life."</p>
@@ -133,11 +121,6 @@
                 <li><a href="post2.html">Top 5 Skills Employers Look For in 2025</a></li>
                 <li><a href="post3.html">Crafting a Resume That Stands Out</a></li>
             </ul>
-        </div>
-
-        <!-- Placeholder for iframe content -->
-        <div id="jobContent">
-            <!-- The content of jobs.html will be loaded here -->
         </div>
     </main>
 
@@ -154,40 +137,6 @@
                 e.preventDefault(); // Prevent form submission if the input is empty
                 alert('Please enter a job search term.');
             }
-        });
-
-        // Add the ad code dynamically
-        var adContainer = document.getElementById('adContainer');
-        var adScript = document.createElement('script');
-        adScript.type = 'text/javascript';
-        adScript.innerHTML = `
-            atOptions = {
-                'key' : '6e877c7df253876ae0ff9b5b887986cb',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-            };
-            var iframe = document.createElement('iframe');
-            iframe.src = '//onlyassigncoherence.com/6e877c7df253876ae0ff9b5b887986cb/invoke.js';
-            iframe.width = '300';
-            iframe.height = '250';
-            adContainer.appendChild(iframe);
-        `;
-        document.body.appendChild(adScript);
-
-        // Load jobs content inside an iframe on button click
-        document.getElementById('loadJobs').addEventListener('click', function() {
-            document.getElementById('jobContent').innerHTML = `
-                <iframe src="jobs.html"></iframe>
-            `;
-        });
-
-        // Handle navigation to the Jobs section
-        document.getElementById('jobsLink').addEventListener('click', function() {
-            document.getElementById('jobContent').innerHTML = `
-                <iframe src="jobs.html"></iframe>
-            `;
         });
     </script>
 </body>
