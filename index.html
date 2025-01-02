@@ -25,6 +25,20 @@
             margin: 0;
             font-size: 2.5em;
         }
+        nav {
+            background: #4CAF50;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
         main {
             padding: 20px;
             text-align: center;
@@ -49,14 +63,51 @@
             font-style: italic;
             color: #555;
         }
+        .recent-posts {
+            margin-top: 40px;
+            text-align: left;
+        }
+        .recent-posts h2 {
+            color: #4CAF50;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Charting New Horizons in Your Career Journey</h1>
+        <h1>Jobseeker's Journal</h1>
     </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+
     <main>
         <p>Welcome to <strong>Jobseeker's Journal</strong>, your go-to platform for discovering career opportunities, unlocking potential, and achieving your professional goals.</p>
+        
+        <div class="search-section">
+            <input type="text" placeholder="Search for jobs..." style="padding: 10px; width: 80%; margin-top: 20px;">
+            <button style="padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer;">Search</button>
+        </div>
+
         <a href="jobs.html" class="cta-button">View Job Listings</a>
 
         <div class="quotes">
@@ -64,6 +115,20 @@
             <p>"Opportunities don't happen, you create them."</p>
             <p>"The future depends on what you do today."</p>
         </div>
+
+        <div class="recent-posts">
+            <h2>Recent Posts</h2>
+            <ul>
+                <li><a href="post1.html">How to Ace Your Next Job Interview</a></li>
+                <li><a href="post2.html">Top 5 Skills Employers Look For in 2025</a></li>
+                <li><a href="post3.html">Crafting a Resume That Stands Out</a></li>
+            </ul>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Jobseeker's Journal. All rights reserved.</p>
+        <p><a href="about.html">About Us</a> | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
 </body>
 </html>
