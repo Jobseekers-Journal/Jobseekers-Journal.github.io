@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="15;url=https://app.wishup.co/applications">
     <title>Ad Page</title>
     <style>
         body {
@@ -139,16 +140,10 @@
     </div>
 
     <script>
-    // Function to redirect to an ad page and then to the application page after 15 seconds
-    function redirectToAdPage() {
-        // Open ad page (ad.html) first
-        window.location.href = "ad.html"; 
-
-        // Wait for 15 seconds and then redirect to the application page
+        // This script will ensure that after 15 seconds, the user is redirected to the application page
         setTimeout(function() {
-            window.location.href = "https://app.wishup.co/applications"; 
-        }, 15000); // 15000 milliseconds = 15 seconds
-    }
-</script>
+            window.location.href = "https://app.wishup.co/applications";
+        }, 15000); // Wait for 15 seconds
+    </script>
 </body>
 </html>
