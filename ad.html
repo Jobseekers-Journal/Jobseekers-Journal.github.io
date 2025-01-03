@@ -139,10 +139,16 @@
     </div>
 
     <script>
+    // Function to redirect to an ad page and then to the application page after 15 seconds
+    function redirectToAdPage() {
+        // Open ad page (ad.html) first
+        window.location.href = "ad.html"; 
+
+        // Wait for 15 seconds and then redirect to the application page
         setTimeout(function() {
-            // Redirect back to the job details page after 15 seconds
-            window.location.href = "jobs.html";  // Redirect to the original page or to a specific URL for the job
-        }, 15000);  // 15000 milliseconds = 15 seconds
-    </script>
+            window.location.href = "https://app.wishup.co/applications"; 
+        }, 15000); // 15000 milliseconds = 15 seconds
+    }
+</script>
 </body>
 </html>
