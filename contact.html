@@ -23,16 +23,23 @@
     <main>
         <h2>Contact Us</h2>
         <p>Have questions or feedback? We'd love to hear from you!</p>
-        <!-- Modified Form -->
+        <!-- Modified Form with Phone Number -->
         <form action="https://formspree.io/f/mannleqz" method="POST" enctype="multipart/form-data">
             <label>
                 Your email:
                 <input type="email" name="email" required>
             </label><br><br>
+
+            <label>
+                Your phone number:
+                <input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Enter 10 digit phone number" required>
+            </label><br><br>
+
             <label>
                 Your file:
                 <input type="file" name="upload">
             </label><br><br>
+
             <button type="submit" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer;">Send</button>
         </form>
     </main>
