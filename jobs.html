@@ -163,7 +163,7 @@
         <div class="job-listing">
             <div class="job-title">Online Business Manager - Wishup</div>
             <p>Location: Remote | Experience: 2+ years</p>
-            <button class="apply-button" onclick="toggleDetails()">Read More</button>
+            <button class="apply-button" onclick="redirectToAdPage()">Read More</button>
 
             <!-- Hidden job details (initially hidden) -->
             <div id="job-details" style="display: none; margin-top: 10px; text-align: left;">
@@ -186,20 +186,6 @@
             </div>
         </div>
 
-        <script>
-            function toggleDetails() {
-                var details = document.getElementById("job-details");
-                if (details.style.display === "none") {
-                    details.style.display = "block";
-                } else {
-                    details.style.display = "none";
-                }
-            }
-        </script>
-
-        <!-- Call-to-action button -->
-        <a href="jobs.html" class="cta-button">Browse More Jobs</a>
-
         <!-- Ad 3 -->
         <div class="ad-container">
             <script type="text/javascript">
@@ -213,6 +199,22 @@
             </script>
             <script type="text/javascript" src="//onlyassigncoherence.com/29471781cdc806357575a4a793448ef3/invoke.js"></script>
         </div>
+
+        <script>
+            // Function to redirect to an ad page first
+            function redirectToAdPage() {
+                window.location.href = "ad.html";  // Make sure this page has the ad content
+            }
+
+            // You can create a function to show job details after returning to the original page
+            function showJobDetails() {
+                var details = document.getElementById("job-details");
+                details.style.display = "block";
+            }
+        </script>
+
+        <!-- Call-to-action button -->
+        <a href="jobs.html" class="cta-button">Browse More Jobs</a>
 
         <!-- Ad 4 -->
         <div class="ad-container">
