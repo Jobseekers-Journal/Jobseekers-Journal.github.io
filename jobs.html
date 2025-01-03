@@ -121,7 +121,7 @@
         <div class="job-listing">
             <div class="job-title">Business Analyst - Deloitte</div>
             <p>Location: Remote | Experience: 2+ years</p>
-            <a href="https://example.com/apply-business-analyst" class="apply-button" target="_blank">Apply Now</a>
+            <a href="https://example.com/apply-business-analyst" class="apply-button" target="_blank" onclick="applyNow('ad.html')">Apply Now</a>
         </div>
 
         <!-- Ad 1 -->
@@ -142,7 +142,7 @@
         <div class="job-listing">
             <div class="job-title">Software Engineer - XYZ Corp</div>
             <p>Location: San Francisco | Experience: 3+ years</p>
-            <a href="https://example.com/apply-software-engineer" class="apply-button" target="_blank">Apply Now</a>
+            <a href="https://example.com/apply-software-engineer" class="apply-button" target="_blank" onclick="applyNow('ad.html')">Apply Now</a>
         </div>
 
         <!-- Ad 2 -->
@@ -163,10 +163,8 @@
         <div class="job-listing">
             <div class="job-title">Online Business Manager - Wishup</div>
             <p>Location: Remote | Experience: 2+ years</p>
-            <button class="apply-button" onclick="redirectToAdPage()">Read More</button>
-
-            <!-- Hidden job details (initially hidden) -->
-            <div id="job-details" style="display: none; margin-top: 10px; text-align: left;">
+            <a href="https://example.com/apply-online-business-manager" class="apply-button" target="_blank" onclick="applyNow('ad.html')">Apply Now</a>
+            <div id="job-details" style="margin-top: 10px; text-align: left;">
                 <h3>Job Description:</h3>
                 <p>As an Online Business Manager at Wishup, you will play a key role in overseeing business operations, managing clients, and ensuring smooth workflow. This remote position offers the flexibility to work from anywhere and grow within the organization.</p>
                 <h4>Responsibilities:</h4>
@@ -201,15 +199,12 @@
         </div>
 
         <script>
-            // Function to redirect to an ad page first
-            function redirectToAdPage() {
-                window.location.href = "ad.html";  // Make sure this page has the ad content
-            }
-
-            // You can create a function to show job details after returning to the original page
-            function showJobDetails() {
-                var details = document.getElementById("job-details");
-                details.style.display = "block";
+            // Function to redirect to ad page first, then after 15 seconds, redirect to the target application URL
+            function applyNow(adPage) {
+                window.location.href = adPage;  // Redirect to ad page first
+                setTimeout(function() {
+                    window.location.href = "https://app.wishup.co/applications";  // After 15 seconds, redirect to the target URL
+                }, 15000);  // 15 seconds delay
             }
         </script>
 
