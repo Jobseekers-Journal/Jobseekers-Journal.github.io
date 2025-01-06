@@ -144,52 +144,45 @@
         </div>
 
         <!-- Job Listings -->
+        <div id="jobList">
+            <!-- Job Listing 1 (Salesforce - Fresher Data Analyst) -->
+            <div class="job-listing" id="job-1">
+                <div class="job-title">Salesforce - Fresher Data Analyst (Get Fix Job)</div>
+                <p>Location: Pune / Remote | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
+                <a href="https://techjobalert.in/web-stories/salesforce-is-hiring-a-data-analyst/" class="apply-button">Apply Now</a>
+            </div>
 
-        <!-- Job Listing 1 (Salesforce - Fresher Data Analyst) -->
-        <div class="job-listing">
-            <div class="job-title">Salesforce - Fresher Data Analyst (Get Fix Job)</div>
-            <p>Location: Pune / Remote | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
-            <a href="https://techjobalert.in/web-stories/salesforce-is-hiring-a-data-analyst/" class="apply-button">Apply Now</a>
-        </div>
+            <!-- Job Listing 2 (TCS IT - Fresher Data Analyst) -->
+            <div class="job-listing" id="job-2">
+                <div class="job-title">TCS IT - Fresher Data Analyst</div>
+                <p>Location: Pune / Bangalore / Mumbai | Salary: 4 LPA - 10 LPA | Experience: 0 - 3 years</p>
+                <a href="https://techjobalert.in/web-stories/tcs-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
+            </div>
 
-        <!-- Job Listing 2 (TCS IT - Fresher Data Analyst) -->
-        <div class="job-listing">
-            <div class="job-title">TCS IT - Fresher Data Analyst</div>
-            <p>Location: Pune / Bangalore / Mumbai | Salary: 4 LPA - 10 LPA | Experience: 0 - 3 years</p>
-            <a href="https://techjobalert.in/web-stories/tcs-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
-        </div>
+            <!-- Job Listing 3 (Cognizant - Data / Business Analyst) -->
+            <div class="job-listing" id="job-3">
+                <div class="job-title">Cognizant - Data / Business Analyst</div>
+                <p>Location: Pune / Bangalore / Hyderabad | Salary: 7.5 LPA - 11 LPA | Experience: 0 - 2 years</p>
+                <a href="https://techjobalert.in/web-stories/cognizant-fresher-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
+            </div>
 
-        <!-- Job Listing 3 (Cognizant - Data / Business Analyst) -->
-        <div class="job-listing">
-            <div class="job-title">Cognizant - Data / Business Analyst</div>
-            <p>Location: Pune / Bangalore / Hyderabad | Salary: 7.5 LPA - 11 LPA | Experience: 0 - 2 years</p>
-            <a href="https://techjobalert.in/web-stories/cognizant-fresher-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
-        </div>
+            <!-- Job Listing 4 (Wipro - Data / Business Analyst) -->
+            <div class="job-listing" id="job-4">
+                <div class="job-title">Wipro - Data / Business Analyst</div>
+                <p>Location: Pune / Bangalore / Flexible | Salary: 4 LPA - 8 LPA | Experience: 0 - 3 years</p>
+                <a href="https://techjobalert.in/web-stories/wipro-off-campus-drive-2024-all-graduates-eligible/" class="apply-button">Apply Now</a>
+            </div>
 
-        <!-- Job Listing 4 (Wipro - Data / Business Analyst) -->
-        <div class="job-listing">
-            <div class="job-title">Wipro - Data / Business Analyst</div>
-            <p>Location: Pune / Bangalore / Flexible | Salary: 4 LPA - 8 LPA | Experience: 0 - 3 years</p>
-            <a href="https://techjobalert.in/web-stories/wipro-off-campus-drive-2024-all-graduates-eligible/" class="apply-button">Apply Now</a>
-        </div>
-
-        <!-- Job Listing 5 (L&T - Data Analyst) -->
-        <div class="job-listing">
-            <div class="job-title">L&T (Larsen & Toubro) - Data Analyst</div>
-            <p>Location: Pune / Work From Home | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
-            <a href="https://job.techjobalert.in/web-stories/lt-energy-is-hiring-a-entry-leval-data-analyst-0-2/" class="apply-button">Apply Now</a>
-        </div>
-
-        <!-- Job Listing 6 (Online Business Manager - Wishup) -->
-        <div class="job-listing">
-            <div class="job-title">Online Business Manager - Wishup</div>
-            <p>Location: Remote | Experience: 2+ years</p>
-            <a href="ad.html" class="apply-button">Apply Now</a>
+            <!-- Job Listing 5 (L&T - Data Analyst) -->
+            <div class="job-listing" id="job-5">
+                <div class="job-title">L&T (Larsen & Toubro) - Data Analyst</div>
+                <p>Location: Pune / Work From Home | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
+                <a href="https://job.techjobalert.in/web-stories/lt-energy-is-hiring-a-entry-leval-data-analyst-0-2/" class="apply-button">Apply Now</a>
+            </div>
         </div>
 
         <!-- Ads Section (10 Ads) -->
-
-        <!-- Ad 1 -->
+         <!-- Ad 1 -->
         <div class="ad-container">
             <script type="text/javascript">
                 atOptions = {
@@ -276,6 +269,9 @@
             <script type="text/javascript" src="//onlyassigncoherence.com/cb3b9376d7eb16f7e39f7ae911cb1c99/invoke.js"></script>
         </div>
 
+
+        <!-- ... The ad code remains the same ... -->
+
         <footer>
             <p>© 2025 Jobseeker's Journal | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a></p>
         </footer>
@@ -296,6 +292,26 @@
                 }
             });
         }
+
+        // JavaScript function to filter job listing by ID (on copy link click)
+        function filterJobById(jobId) {
+            const allJobs = document.querySelectorAll('.job-listing');
+            allJobs.forEach(job => {
+                if (job.id === jobId) {
+                    job.style.display = 'block';
+                } else {
+                    job.style.display = 'none';
+                }
+            });
+        }
+
+        // Example function to be used when clicking on a job title or "copy link" button
+        document.querySelectorAll('.job-title').forEach(title => {
+            title.addEventListener('click', function() {
+                const jobId = this.closest('.job-listing').id;
+                filterJobById(jobId);
+            });
+        });
     </script>
 </body>
 </html>
