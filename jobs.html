@@ -98,6 +98,26 @@
         footer a:hover {
             text-decoration: underline;
         }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .search-input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -117,43 +137,49 @@
     <main>
         <h2>Available Job Listings</h2>
 
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search jobs..." id="jobSearch">
+            <button class="search-button" onclick="searchJobs()">Search</button>
+        </div>
+
+        <!-- Job Listings -->
 
         <!-- Job Listing 1 (Salesforce - Fresher Data Analyst) -->
-<div class="job-listing">
-    <div class="job-title">Salesforce - Fresher Data Analyst (Get Fix Job)</div>
-    <p>Location: Pune / Remote | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
-    <a href="https://techjobalert.in/web-stories/salesforce-is-hiring-a-data-analyst/" class="apply-button">Apply Now</a>
-</div>
+        <div class="job-listing">
+            <div class="job-title">Salesforce - Fresher Data Analyst (Get Fix Job)</div>
+            <p>Location: Pune / Remote | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
+            <a href="https://techjobalert.in/web-stories/salesforce-is-hiring-a-data-analyst/" class="apply-button">Apply Now</a>
+        </div>
 
-<!-- Job Listing 2 (TCS IT - Fresher Data Analyst) -->
-<div class="job-listing">
-    <div class="job-title">TCS IT - Fresher Data Analyst</div>
-    <p>Location: Pune / Bangalore / Mumbai | Salary: 4 LPA - 10 LPA | Experience: 0 - 3 years</p>
-    <a href="https://techjobalert.in/web-stories/tcs-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
-</div>
+        <!-- Job Listing 2 (TCS IT - Fresher Data Analyst) -->
+        <div class="job-listing">
+            <div class="job-title">TCS IT - Fresher Data Analyst</div>
+            <p>Location: Pune / Bangalore / Mumbai | Salary: 4 LPA - 10 LPA | Experience: 0 - 3 years</p>
+            <a href="https://techjobalert.in/web-stories/tcs-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
+        </div>
 
-<!-- Job Listing 3 (Cognizant - Data / Business Analyst) -->
-<div class="job-listing">
-    <div class="job-title">Cognizant - Data / Business Analyst</div>
-    <p>Location: Pune / Bangalore / Hyderabad | Salary: 7.5 LPA - 11 LPA | Experience: 0 - 2 years</p>
-    <a href="https://techjobalert.in/web-stories/cognizant-fresher-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
-</div>
+        <!-- Job Listing 3 (Cognizant - Data / Business Analyst) -->
+        <div class="job-listing">
+            <div class="job-title">Cognizant - Data / Business Analyst</div>
+            <p>Location: Pune / Bangalore / Hyderabad | Salary: 7.5 LPA - 11 LPA | Experience: 0 - 2 years</p>
+            <a href="https://techjobalert.in/web-stories/cognizant-fresher-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
+        </div>
 
-<!-- Job Listing 4 (Wipro - Data / Business Analyst) -->
-<div class="job-listing">
-    <div class="job-title">Wipro - Data / Business Analyst</div>
-    <p>Location: Pune / Bangalore / Flexible | Salary: 4 LPA - 8 LPA | Experience: 0 - 3 years</p>
-    <a href="https://techjobalert.in/web-stories/wipro-off-campus-drive-2024-all-graduates-eligible/" class="apply-button">Apply Now</a>
-</div>
+        <!-- Job Listing 4 (Wipro - Data / Business Analyst) -->
+        <div class="job-listing">
+            <div class="job-title">Wipro - Data / Business Analyst</div>
+            <p>Location: Pune / Bangalore / Flexible | Salary: 4 LPA - 8 LPA | Experience: 0 - 3 years</p>
+            <a href="https://techjobalert.in/web-stories/wipro-off-campus-drive-2024-all-graduates-eligible/" class="apply-button">Apply Now</a>
+        </div>
 
-<!-- Job Listing 5 (L&T - Data Analyst) -->
-<div class="job-listing">
-    <div class="job-title">L&T (Larsen & Toubro) - Data Analyst</div>
-    <p>Location: Pune / Work From Home | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
-    <a href="https://job.techjobalert.in/web-stories/lt-energy-is-hiring-a-entry-leval-data-analyst-0-2/" class="apply-button">Apply Now</a>
-</div>
+        <!-- Job Listing 5 (L&T - Data Analyst) -->
+        <div class="job-listing">
+            <div class="job-title">L&T (Larsen & Toubro) - Data Analyst</div>
+            <p>Location: Pune / Work From Home | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
+            <a href="https://job.techjobalert.in/web-stories/lt-energy-is-hiring-a-entry-leval-data-analyst-0-2/" class="apply-button">Apply Now</a>
+        </div>
 
-        
         <!-- Job Listing 6 (Online Business Manager - Wishup) -->
         <div class="job-listing">
             <div class="job-title">Online Business Manager - Wishup</div>
@@ -180,10 +206,10 @@
                 </ul>
             </div>
         </div>
-        
 
+        <!-- Ads Section (10 Ads) -->
 
-        <!-- Ad 3 -->
+        <!-- Ad 1 -->
         <div class="ad-container">
             <script type="text/javascript">
                 atOptions = {
@@ -194,23 +220,10 @@
                     'params' : {}
                 };
             </script>
-            <script type="text/javascript" src="//onlyassigncoherence.com/29471781cdc806357575a4a793448ef3/invoke.js"></script>
+            <script type="text/javascript" src="//onlyassigncoherence.com/29471781cdc806357575575a4a793448ef3/invoke.js"></script>
         </div>
 
-        <script>
-            // Function to redirect to ad page first, then after 15 seconds, redirect to the target application URL
-            function applyNow(adPage) {
-                window.location.href = adPage;  // Redirect to ad page first
-                setTimeout(function() {
-                    window.location.href = "https://app.wishup.co/applications";  // After 15 seconds, redirect to the target URL
-                }, 15000);  // 15 seconds delay
-            }
-        </script>
-
-        <!-- Call-to-action button -->
-        <a href="jobs.html" class="cta-button">Browse More Jobs</a>
-
-        <!-- Ad 4 -->
+        <!-- Ad 2 -->
         <div class="ad-container">
             <script type="text/javascript">
                 atOptions = {
@@ -224,7 +237,7 @@
             <script type="text/javascript" src="//onlyassigncoherence.com/928c3392bfdd443c2b210320397469c1/invoke.js"></script>
         </div>
 
-        <!-- Ad 5 -->
+        <!-- Ad 3 -->
         <div class="ad-container">
             <script type="text/javascript">
                 atOptions = {
@@ -238,22 +251,22 @@
             <script type="text/javascript" src="//onlyassigncoherence.com/cb3b9376d7eb16f7e39f7ae911cb1c99/invoke.js"></script>
         </div>
 
-        <!-- Ad 6 -->
+        <!-- Ad 4 -->
         <div class="ad-container">
             <script type="text/javascript" src="https://onlyassigncoherence.com/s8u8ryq9n?key=ed077f909ad4d8b596f9b09a2a8a7c2e"></script>
         </div>
 
-        <!-- Ad 7 -->
+        <!-- Ad 5 -->
         <div class="ad-container">
             <script type='text/javascript' src='//onlyassigncoherence.com/1b/53/60/1b53608081d11d1bf718265b2c334065.js'></script>
         </div>
 
-        <!-- Ad 8 -->
+        <!-- Ad 6 -->
         <div class="ad-container">
             <script type='text/javascript' src='//onlyassigncoherence.com/94/7c/c8/947cc8b0ecea028b1b84be2574eb6388.js'></script>
         </div>
 
-        <!-- Ad 9 -->
+        <!-- Ad 7 -->
         <div class="ad-container">
             <script type="text/javascript">
                 atOptions = {
@@ -267,16 +280,44 @@
             <script type="text/javascript" src="//onlyassigncoherence.com/8165f2ca7c03319f52bd76fac24cb123/invoke.js"></script>
         </div>
 
-        <!-- Ad 10 -->
+        <!-- Ad 8 -->
         <div class="ad-container">
             <script async="async" data-cfasync="false" src="//onlyassigncoherence.com/88d5bd444b928a14653385ba9b06ef28/invoke.js"></script>
             <div id="container-88d5bd444b928a14653385ba9b06ef28"></div>
         </div>
+
+        <!-- Ad 9 -->
+        <div class="ad-container">
+            <script type="text/javascript" src="//onlyassigncoherence.com/29471781cdc806357575a4a793448ef3/invoke.js"></script>
+        </div>
+
+        <!-- Ad 10 -->
+        <div class="ad-container">
+            <script type="text/javascript" src="//onlyassigncoherence.com/cb3b9376d7eb16f7e39f7ae911cb1c99/invoke.js"></script>
+        </div>
+
+        <!-- End of Ads -->
+
+        <footer>
+            <p>© 2025 Jobseeker's Journal | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a></p>
+        </footer>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Jobseeker's Journal. All rights reserved.</p>
-        <p><a href="about.html">About Us</a> | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a> | <a href="contact.html">Contact Us</a></p>
-    </footer>
+    <script>
+        // JavaScript function for search button
+        function searchJobs() {
+            const searchInput = document.getElementById("jobSearch").value.toLowerCase();
+            const jobListings = document.getElementsByClassName("job-listing");
+
+            for (let i = 0; i < jobListings.length; i++) {
+                let jobTitle = jobListings[i].getElementsByClassName("job-title")[0].innerText.toLowerCase();
+                if (jobTitle.includes(searchInput)) {
+                    jobListings[i].style.display = "block";
+                } else {
+                    jobListings[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
