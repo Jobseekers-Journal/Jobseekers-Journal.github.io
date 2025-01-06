@@ -8,6 +8,7 @@
     <meta name="author" content="Jobseeker's Journal">
     <title>Job Listings - Jobseeker's Journal</title>
     <style>
+        /* Existing styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -54,6 +55,7 @@
             font-size: 1.5em;
             font-weight: bold;
             color: #4CAF50;
+            cursor: pointer;
         }
         .apply-button {
             background-color: #4CAF50;
@@ -98,25 +100,38 @@
         footer a:hover {
             text-decoration: underline;
         }
-        .search-container {
-            margin-bottom: 20px;
+        /* Modal Styles */
+        .job-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
         }
-        .search-input {
-            padding: 10px;
-            width: 300px;
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
             border-radius: 5px;
-            border: 1px solid #ccc;
         }
-        .search-button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
             cursor: pointer;
-        }
-        .search-button:hover {
-            background-color: #45a049;
         }
     </style>
 </head>
@@ -146,135 +161,45 @@
         <!-- Job Listings -->
         <div id="jobList">
             <!-- Job Listing 1 (Salesforce - Fresher Data Analyst) -->
-            <div style="margin-bottom: 20px;">
-    <a href="jobs.html" class="cta-button">Back to Job Listings</a>
-</div>
-            
             <div class="job-listing" id="job-1">
-                <div class="job-title">Salesforce - Fresher Data Analyst (Get Fix Job)</div>
+                <div class="job-title" onclick="openJobModal('job-1')">Salesforce - Fresher Data Analyst (Get Fix Job)</div>
                 <p>Location: Pune / Remote | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
-                <a href="https://techjobalert.in/web-stories/salesforce-is-hiring-a-data-analyst/" class="apply-button">Apply Now</a>
             </div>
 
             <!-- Job Listing 2 (TCS IT - Fresher Data Analyst) -->
             <div class="job-listing" id="job-2">
-                <div class="job-title">TCS IT - Fresher Data Analyst</div>
+                <div class="job-title" onclick="openJobModal('job-2')">TCS IT - Fresher Data Analyst</div>
                 <p>Location: Pune / Bangalore / Mumbai | Salary: 4 LPA - 10 LPA | Experience: 0 - 3 years</p>
-                <a href="https://techjobalert.in/web-stories/tcs-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
             </div>
 
             <!-- Job Listing 3 (Cognizant - Data / Business Analyst) -->
             <div class="job-listing" id="job-3">
-                <div class="job-title">Cognizant - Data / Business Analyst</div>
+                <div class="job-title" onclick="openJobModal('job-3')">Cognizant - Data / Business Analyst</div>
                 <p>Location: Pune / Bangalore / Hyderabad | Salary: 7.5 LPA - 11 LPA | Experience: 0 - 2 years</p>
-                <a href="https://techjobalert.in/web-stories/cognizant-fresher-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
             </div>
 
             <!-- Job Listing 4 (Wipro - Data / Business Analyst) -->
             <div class="job-listing" id="job-4">
-                <div class="job-title">Wipro - Data / Business Analyst</div>
+                <div class="job-title" onclick="openJobModal('job-4')">Wipro - Data / Business Analyst</div>
                 <p>Location: Pune / Bangalore / Flexible | Salary: 4 LPA - 8 LPA | Experience: 0 - 3 years</p>
-                <a href="https://techjobalert.in/web-stories/wipro-off-campus-drive-2024-all-graduates-eligible/" class="apply-button">Apply Now</a>
             </div>
 
             <!-- Job Listing 5 (L&T - Data Analyst) -->
             <div class="job-listing" id="job-5">
-                <div class="job-title">L&T (Larsen & Toubro) - Data Analyst</div>
+                <div class="job-title" onclick="openJobModal('job-5')">L&T (Larsen & Toubro) - Data Analyst</div>
                 <p>Location: Pune / Work From Home | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
-                <a href="https://job.techjobalert.in/web-stories/lt-energy-is-hiring-a-entry-leval-data-analyst-0-2/" class="apply-button">Apply Now</a>
             </div>
         </div>
 
-        <!-- Ads Section (10 Ads) -->
-         <!-- Ad 1 -->
-        <div class="ad-container">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '29471781cdc806357575a4a793448ef3',
-                    'format' : 'iframe',
-                    'height' : 600,
-                    'width' : 160,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//onlyassigncoherence.com/29471781cdc806357575575a4a793448ef3/invoke.js"></script>
+        <!-- Job Modal (Dynamic Content) -->
+        <div id="jobModal" class="job-modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeJobModal()">&times;</span>
+                <h2 id="jobModalTitle">Job Title</h2>
+                <p id="jobModalDetails">Job Details</p>
+                <a id="jobModalLink" href="#" class="apply-button">Apply Now</a>
+            </div>
         </div>
-
-        <!-- Ad 2 -->
-        <div class="ad-container">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '928c3392bfdd443c2b210320397469c1',
-                    'format' : 'iframe',
-                    'height' : 300,
-                    'width' : 160,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//onlyassigncoherence.com/928c3392bfdd443c2b210320397469c1/invoke.js"></script>
-        </div>
-
-        <!-- Ad 3 -->
-        <div class="ad-container">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : 'cb3b9376d7eb16f7e39f7ae911cb1c99',
-                    'format' : 'iframe',
-                    'height' : 60,
-                    'width' : 468,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//onlyassigncoherence.com/cb3b9376d7eb16f7e39f7ae911cb1c99/invoke.js"></script>
-        </div>
-
-        <!-- Ad 4 -->
-        <div class="ad-container">
-            <script type="text/javascript" src="https://onlyassigncoherence.com/s8u8ryq9n?key=ed077f909ad4d8b596f9b09a2a8a7c2e"></script>
-        </div>
-
-        <!-- Ad 5 -->
-        <div class="ad-container">
-            <script type='text/javascript' src='//onlyassigncoherence.com/1b/53/60/1b53608081d11d1bf718265b2c334065.js'></script>
-        </div>
-
-        <!-- Ad 6 -->
-        <div class="ad-container">
-            <script type='text/javascript' src='//onlyassigncoherence.com/94/7c/c8/947cc8b0ecea028b1b84be2574eb6388.js'></script>
-        </div>
-
-        <!-- Ad 7 -->
-        <div class="ad-container">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '8165f2ca7c03319f52bd76fac24cb123',
-                    'format' : 'iframe',
-                    'height' : 50,
-                    'width' : 320,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//onlyassigncoherence.com/8165f2ca7c03319f52bd76fac24cb123/invoke.js"></script>
-        </div>
-
-        <!-- Ad 8 -->
-        <div class="ad-container">
-            <script async="async" data-cfasync="false" src="//onlyassigncoherence.com/88d5bd444b928a14653385ba9b06ef28/invoke.js"></script>
-            <div id="container-88d5bd444b928a14653385ba9b06ef28"></div>
-        </div>
-
-        <!-- Ad 9 -->
-        <div class="ad-container">
-            <script type="text/javascript" src="//onlyassigncoherence.com/29471781cdc806357575a4a793448ef3/invoke.js"></script>
-        </div>
-
-        <!-- Ad 10 -->
-        <div class="ad-container">
-            <script type="text/javascript" src="//onlyassigncoherence.com/cb3b9376d7eb16f7e39f7ae911cb1c99/invoke.js"></script>
-        </div>
-
-
-        <!-- ... The ad code remains the same ... -->
 
         <footer>
             <p>© 2025 Jobseeker's Journal | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a></p>
@@ -282,40 +207,50 @@
     </main>
 
     <script>
-        // JavaScript function for search button
-        function searchJobs() {
-            const searchQuery = document.getElementById('jobSearch').value.toLowerCase();
-            const jobListings = document.querySelectorAll('.job-listing');
-            
-            jobListings.forEach(job => {
-                const jobTitle = job.querySelector('.job-title').textContent.toLowerCase();
-                if (jobTitle.includes(searchQuery)) {
-                    job.style.display = 'block';
-                } else {
-                    job.style.display = 'none';
+        // Function to open the job modal and display dynamic content
+        function openJobModal(jobId) {
+            const jobDetails = {
+                "job-1": {
+                    title: "Salesforce - Fresher Data Analyst",
+                    details: "Location: Pune / Remote | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years",
+                    link: "https://techjobalert.in/web-stories/salesforce-is-hiring-a-data-analyst/"
+                },
+                "job-2": {
+                    title: "TCS IT - Fresher Data Analyst",
+                    details: "Location: Pune / Bangalore / Mumbai | Salary: 4 LPA - 10 LPA | Experience: 0 - 3 years",
+                    link: "https://techjobalert.in/web-stories/tcs-data-science-off-campus-drive-2024/"
+                },
+                "job-3": {
+                    title: "Cognizant - Data / Business Analyst",
+                    details: "Location: Pune / Bangalore / Hyderabad | Salary: 7.5 LPA - 11 LPA | Experience: 0 - 2 years",
+                    link: "https://techjobalert.in/web-stories/cognizant-fresher-data-science-off-campus-drive-2024/"
+                },
+                "job-4": {
+                    title: "Wipro - Data / Business Analyst",
+                    details: "Location: Pune / Bangalore / Flexible | Salary: 4 LPA - 8 LPA | Experience: 0 - 3 years",
+                    link: "https://techjobalert.in/web-stories/wipro-off-campus-drive-2024-all-graduates-eligible/"
+                },
+                "job-5": {
+                    title: "L&T (Larsen & Toubro) - Data Analyst",
+                    details: "Location: Pune / Work From Home | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years",
+                    link: "https://techjobalert.in/web-stories/larsen-and-toubro-lt-hiring-data-analyst/"
                 }
-            });
+            };
+
+            // Get job details and update modal content
+            const job = jobDetails[jobId];
+            document.getElementById("jobModalTitle").innerText = job.title;
+            document.getElementById("jobModalDetails").innerText = job.details;
+            document.getElementById("jobModalLink").href = job.link;
+
+            // Show the modal
+            document.getElementById("jobModal").style.display = "block";
         }
 
-        // JavaScript function to filter job listing by ID (on copy link click)
-        function filterJobById(jobId) {
-            const allJobs = document.querySelectorAll('.job-listing');
-            allJobs.forEach(job => {
-                if (job.id === jobId) {
-                    job.style.display = 'block';
-                } else {
-                    job.style.display = 'none';
-                }
-            });
+        // Function to close the job modal
+        function closeJobModal() {
+            document.getElementById("jobModal").style.display = "none";
         }
-
-        // Example function to be used when clicking on a job title or "copy link" button
-        document.querySelectorAll('.job-title').forEach(title => {
-            title.addEventListener('click', function() {
-                const jobId = this.closest('.job-listing').id;
-                filterJobById(jobId);
-            });
-        });
     </script>
 </body>
 </html>
