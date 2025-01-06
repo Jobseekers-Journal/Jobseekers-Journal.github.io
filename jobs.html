@@ -146,36 +146,46 @@
         <!-- Job Listings -->
         <div id="jobList">
             <!-- Job Listing 1 (Salesforce - Fresher Data Analyst) -->
-            <div class="job-listing" id="job-1">
-                <div class="job-title">Salesforce - Fresher Data Analyst (Get Fix Job)</div>
+            <div class="job-listing" id="salesforce-fresher-data-analyst">
+                <div class="job-title">
+                    <a href="jobs.html?job=salesforce-fresher-data-analyst">Salesforce - Fresher Data Analyst (Get Fix Job)</a>
+                </div>
                 <p>Location: Pune / Remote | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
                 <a href="https://techjobalert.in/web-stories/salesforce-is-hiring-a-data-analyst/" class="apply-button">Apply Now</a>
             </div>
 
             <!-- Job Listing 2 (TCS IT - Fresher Data Analyst) -->
-            <div class="job-listing" id="job-2">
-                <div class="job-title">TCS IT - Fresher Data Analyst</div>
+            <div class="job-listing" id="tcs-it-fresher-data-analyst">
+                <div class="job-title">
+                    <a href="jobs.html?job=tcs-it-fresher-data-analyst">TCS IT - Fresher Data Analyst</a>
+                </div>
                 <p>Location: Pune / Bangalore / Mumbai | Salary: 4 LPA - 10 LPA | Experience: 0 - 3 years</p>
                 <a href="https://techjobalert.in/web-stories/tcs-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
             </div>
 
             <!-- Job Listing 3 (Cognizant - Data / Business Analyst) -->
-            <div class="job-listing" id="job-3">
-                <div class="job-title">Cognizant - Data / Business Analyst</div>
+            <div class="job-listing" id="cognizant-data-business-analyst">
+                <div class="job-title">
+                    <a href="jobs.html?job=cognizant-data-business-analyst">Cognizant - Data / Business Analyst</a>
+                </div>
                 <p>Location: Pune / Bangalore / Hyderabad | Salary: 7.5 LPA - 11 LPA | Experience: 0 - 2 years</p>
                 <a href="https://techjobalert.in/web-stories/cognizant-fresher-data-science-off-campus-drive-2024/" class="apply-button">Apply Now</a>
             </div>
 
             <!-- Job Listing 4 (Wipro - Data / Business Analyst) -->
-            <div class="job-listing" id="job-4">
-                <div class="job-title">Wipro - Data / Business Analyst</div>
+            <div class="job-listing" id="wipro-data-business-analyst">
+                <div class="job-title">
+                    <a href="jobs.html?job=wipro-data-business-analyst">Wipro - Data / Business Analyst</a>
+                </div>
                 <p>Location: Pune / Bangalore / Flexible | Salary: 4 LPA - 8 LPA | Experience: 0 - 3 years</p>
                 <a href="https://techjobalert.in/web-stories/wipro-off-campus-drive-2024-all-graduates-eligible/" class="apply-button">Apply Now</a>
             </div>
 
             <!-- Job Listing 5 (L&T - Data Analyst) -->
-            <div class="job-listing" id="job-5">
-                <div class="job-title">L&T (Larsen & Toubro) - Data Analyst</div>
+            <div class="job-listing" id="lt-data-analyst">
+                <div class="job-title">
+                    <a href="jobs.html?job=lt-data-analyst">L&T (Larsen & Toubro) - Data Analyst</a>
+                </div>
                 <p>Location: Pune / Work From Home | Salary: 4.5 LPA - 8 LPA | Experience: 0 - 2 years</p>
                 <a href="https://job.techjobalert.in/web-stories/lt-energy-is-hiring-a-entry-leval-data-analyst-0-2/" class="apply-button">Apply Now</a>
             </div>
@@ -205,25 +215,25 @@
             });
         }
 
-        // JavaScript function to filter job listing by ID (on copy link click)
-        function filterJobById(jobId) {
-            const allJobs = document.querySelectorAll('.job-listing');
-            allJobs.forEach(job => {
-                if (job.id === jobId) {
-                    job.style.display = 'block';
-                } else {
-                    job.style.display = 'none';
-                }
-            });
-        }
+        // JavaScript function for displaying the specific job based on URL
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobId = urlParams.get('job');
 
-        // Example function to be used when clicking on a job title or "copy link" button
-        document.querySelectorAll('.job-title').forEach(title => {
-            title.addEventListener('click', function() {
-                const jobId = this.closest('.job-listing').id;
-                filterJobById(jobId);
+            // Hide all job listings initially
+            const jobListings = document.querySelectorAll('.job-listing');
+            jobListings.forEach(job => {
+                job.style.display = 'none';
             });
-        });
+
+            // Display only the selected job based on the job ID in the URL
+            if (jobId) {
+                const selectedJob = document.getElementById(jobId);
+                if (selectedJob) {
+                    selectedJob.style.display = 'block';
+                }
+            }
+        }
     </script>
 </body>
 </html>
